@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spacewhale Technologies | Home</title>
+    <title>Spacewhale Technologies | Services</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,12 +21,12 @@
         .nav-links a { font-weight: 500; color: #475569; transition: color 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: #2563eb; }
         .cta-btn { background-color: #2563eb; color: #ffffff !important; padding: 10px 20px; border-radius: 5px; font-weight: 600 !important; }
-        .cta-btn:hover { background-color: #1d4ed8; }
         main { margin-top: 80px; flex-grow: 1; }
-        .hero { padding: 120px 0; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; text-align: center; }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
-        .btn { background-color: #2563eb; color: #ffffff; padding: 15px 30px; border-radius: 5px; font-weight: 600; display: inline-block; }
+        .content-section { padding: 80px 0; background-color: #ffffff; }
+        .section-title { font-size: 2.2rem; color: #0f172a; margin-bottom: 30px; font-weight: 700; text-align: center;}
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .service-card { background: #f8fafc; padding: 40px 30px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .service-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
         footer { background-color: #0f172a; color: #94a3b8; padding: 30px 0; text-align: center; font-size: 0.9rem; margin-top: auto; }
     </style>
 </head>
@@ -35,19 +35,34 @@
         <div class="container nav-container">
             <a class="logo-link" href="index.html"><div class="logo-text">Space<span>whale</span></div></a>
             <ul class="nav-links">
-                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a class="active" href="services.html">Services</a></li>
                 <li><a class="cta-btn" href="contact.html">Contact Us</a></li>
             </ul>
         </div>
     </nav>
     <main>
-        <section class="hero">
+        <section class="content-section">
             <div class="container">
-                <h1>Science & Technology Consulting Services</h1>
-                <p>We help businesses modernize their infrastructure, optimize software architecture, and scale engineering teams safely.</p>
-                <a href="contact.html" class="btn">Schedule a Consultation</a>
+                <h2 class="section-title">Our Technical Expertise</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="service-icon">🌐</span>
+                        <h3>Cloud Architecture</h3>
+                        <p>Design secure, scalable, and cost-effective multi-cloud infrastructure environments.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-icon">🛠️</span>
+                        <h3>Legacy Modernization</h3>
+                        <p>Deconstruct fragile monolithic applications into robust, testable microservices pipelines.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-icon">📈</span>
+                        <h3>CTO Advisory</h3>
+                        <p>Strategic engineering leadership, technical roadmapping, and tech-stack evaluation options.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
