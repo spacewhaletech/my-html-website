@@ -1,0 +1,277 @@
+/* 1. GLOBAL DESIGN VARIABLES (Change these to change the look of the whole site) */
+:root {
+    --primary-color: #2563eb;    /* Deep Blue Accent */
+    --secondary-color: #1e293b;  /* Dark Slate for Text */
+    --background-light: #f8fafc; /* Soft Grey Background */
+    --card-bg: #ffffff;          /* White Form Containers */
+    --success-color: #16a34a;    /* Green Alerts */
+    --error-color: #dc2626;      /* Red Alerts */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. BASE RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #f9fbfd;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 3. NAVIGATION BAR STYLES */
+nav {
+    background-color: var(--secondary-color);
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+}
+.navbar { 
+    background-color: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+}
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 90px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 4. REUSABLE CONTAINER BLOCK */
+.content-container, .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+/* 5. FORM ELEMENT STYLES */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* 6. BUTTON STYLES */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+ul { 
+    list-style: none;
+}
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+/* --- Logo Layout Config --- */
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+.logo-img {
+    max-height: 80px;      /* Restricts the absolute vertical boundary */
+    width: auto;           /* Automatically calculates proportional horizontal scale */
+    display: block;        /* Eradicates unwanted inline text baseline spacing layout gaps */
+    object-fit: contain;   /* Ensures aspect ratio constraints maintain sharp fidelity */
+}
+
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a { font-weight: 500; color: #475569; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: #2563eb; }
+.cta-btn { background-color: #2563eb; color: #ffffff !important; padding: 10px 20px; border-radius: 5px; font-weight: 600 !important; }
+.cta-btn:hover { background-color: #1d4ed8; }
+
+main {
+    margin-top: 80px; 
+    flex-grow: 1; 
+}
+.about-page .content-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+.about-page .section-title { 
+    font-size: 2.2rem; 
+    color: #0f172a; 
+    margin-bottom: 30px; 
+    font-weight: 700; 
+    text-align: center;
+}
+.services-page .content-section { 
+    padding: 80px 0; 
+    background-color: #ffffff; 
+}
+.services-page .section-title { 
+    font-size: 2.2rem; 
+    color: #0f172a; 
+    margin-bottom: 30px; 
+    font-weight: 700; 
+    text-align: center;
+}
+.services-page .services-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-top: 40px; 
+}
+.service-page .service-card { 
+    background: #f8fafc; 
+    padding: 40px 30px; 
+    border-radius: 8px; 
+    border: 1px solid #e2e8f0; 
+}
+.service-page .service-icon { 
+    font-size: 2rem; 
+    margin-bottom: 20px; 
+    display: block; 
+}
+.contact-page .content-section { 
+    padding: 80px 0; 
+    background-color: #ffffff; 
+}
+.contact-page .section-title { 
+    font-size: 2.2rem; 
+    color: #0f172a; 
+    margin-bottom: 30px; 
+    font-weight: 700; 
+    text-align: center;
+}
+.contact-page .contact-form { 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+.contact-page .form-group { 
+    margin-bottom: 20px; 
+}
+.contact-page .form-group label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 500; 
+}
+.contact-page .form-group input, .form-group textarea { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 5px; 
+    font-family: inherit; 
+}
+.contact-page .submit-btn { 
+    background-color: #0f172a; 
+    color: #ffffff; 
+    padding: 12px 30px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    width: 100%; 
+}
+.hero { 
+    padding: 120px 0; 
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+    color: #ffffff; 
+    text-align: center; 
+}
+.hero h1 { 
+    font-size: 3rem; 
+    margin-bottom: 20px; 
+}
+.hero p { 
+    font-size: 1.25rem; 
+    color: #94a3b8; 
+    max-width: 600px; 
+    margin: 0 auto 40px; 
+}
+.btn { 
+    background-color: #2563eb; 
+    color: #ffffff; padding: 15px 30px; 
+    border-radius: 5px; 
+    font-weight: 600; 
+    display: inline-block; 
+}
+footer { 
+    background-color: #0f172a; 
+    color: #94a3b8; 
+    padding: 30px 0; 
+    text-align: center; 
+    font-size: 0.9rem; 
+    margin-top: auto; 
+}
