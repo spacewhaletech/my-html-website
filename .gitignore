@@ -1,4 +1,5 @@
 .env
+scripts/python/
 .sass-cache/
 *.css.map
 *.sass.map
